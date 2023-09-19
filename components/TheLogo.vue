@@ -2,17 +2,15 @@
     <div>
         <NuxtLink to="/">
 
-            <svg width="429.00000000000006" height="94.50943141792787" viewBox="0 0 370.00000000000006 81.51163082665109"
-                class="css-1j8o68f">
-                <defs id="SvgjsDefs1011"></defs>
-                <g id="SvgjsG1012" featurekey="monogramFeature-0"
+            <svg height="45" viewBox="0 0 370.00000000000006 81.51163082665109">
+                <g featurekey="monogramFeature-0"
                     transform="matrix(5.8139535067927515,0,0,5.8139535067927515,-5.8139535067927515,-34.76743930920395)"
                     fill="#00adb5">
                     <path
                         d="M1 5.98 l11.86 0 l0 3.52 l-7.22 0 l0 1.72 l6.56 0 l0 3.52 l-6.56 0 l0 1.74 l7.4 0 l0 3.52 l-12.04 0 l0 -14.02 z">
                     </path>
                 </g>
-                <g id="SvgjsG1013" featurekey="fHLFJf-0"
+                <g featurekey="fHLFJf-0"
                     transform="matrix(2.0786084371877855,0,0,2.0786084371877855,87.92139156281222,14.569922497128474)"
                     fill="#393e46">
                     <path
