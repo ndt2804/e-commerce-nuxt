@@ -4,6 +4,14 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-headlessui',
-    'nuxt-icon'
-  ]
+    'nuxt-icon',
+    '@pinia/nuxt',
+
+  ],
+  pinia: {
+    autoImports: [
+      'defineStore',
+      ['defineStore', 'definePiniaStore'],
+    ],
+  },
 })
