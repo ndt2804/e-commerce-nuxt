@@ -6,6 +6,12 @@ useHead({
 definePageMeta({
     layout: "custom",
 });
+
+const isAdmin = useAdmin();
+
+async function onRegisterSuccess() {
+    await navigateTo({ name: "login" });
+}
 </script>
 
 <template>
@@ -19,58 +25,7 @@ definePageMeta({
                     </div>
                 </div>
                 <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
-                    <form class=" flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
-                        relative z-10">
-                        <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
-                            <h2 class="mb-5  w-full text-4xl font-medium text-center leading-snug font-serif">Đăng Ký</h2>
-                            <div class="relative mb-4">
-                                <label for="full-name"
-                                    class="text-sm leading-7 text-gray-600 bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium absolute">Email</label>
-                                <input type="email" id="email" name="email"
-                                    class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
-                                    required />
-                            </div>
-                            <div class="relative mb-4">
-                                <label for="full-name"
-                                    class="text-sm leading-7 text-gray-600 bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium absolute">Username</label>
-                                <input type="username" id="username" name="username"
-                                    class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
-                                    required />
-                            </div>
-                            <div class="relative mb-4">
-                                <label for="full-name"
-                                    class="text-sm leading-7 text-gray-600 bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium absolute">Password</label>
-                                <input id="password" name="password" type="password"
-                                    class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
-                                    required />
-                            </div>
-                            <div class="relative mb-4">
-                                <label for="full-name"
-                                    class="text-sm leading-7 text-gray-600 bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium absolute">Confirm
-                                    Password</label>
-                                <input id="ConfirmPassword" name="ConfirmPassword" type="password"
-                                    class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
-                                    required />
-                            </div>
-
-                            <div class="relative">
-                                <button type="submit"
-                                    class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center  bg-indigo-500
-                                duration-200 hover:bg-indigo-600 ease rounded border-0  py-2 px-8 font-sans  text-white transition-colors   focus:outline-none">
-                                    <div class="text-button">Sign in</div>
-                                </button>
-                            </div>
-
-                            <div class="mt-2">
-                                <p class="mt-3 text-sm">Do you have an account yet?</p>
-                                <NuxtLink to="/login"
-                                    class="  text-sm   hover:text-gray-800 float-left rounded border-0  py-2 px-4 font-sans font-bold transition-colors duration-500  focus:outline-none w-fit text-[#aac8e4]">
-                                    Login
-                                </NuxtLink>
-                            </div>
-                        </div>
-
-                    </form>
+                    <FormRegister @success="onRegisterSuccess" />
 
                     <svg viewbox="0 0 91 91" class="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300
                   fill-current">

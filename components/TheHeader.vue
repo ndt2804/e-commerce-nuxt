@@ -85,7 +85,9 @@
                                         class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                         <span class="absolute -inset-1.5" />
                                         <span class="sr-only">Open user menu</span>
-                                        <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" />
+
+                                        <img class="h-8 w-8 rounded-full"
+                                            :src="userStore.user ? userStore.user.avatar : user.imageUrl" alt="" />
                                     </MenuButton>
                                 </div>
                                 <transition enter-active-class="transition ease-out duration-100"
@@ -96,10 +98,13 @@
                                     leave-to-class="transform opacity-0 scale-95">
                                     <MenuItems
                                         class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                        <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
+                                        <MenuItem v-for="item in (userStore.user ? userNavigation : Navigation)"
+                                            :key="item.name" v-slot="{ active }">
                                         <a :href="item.href"
-                                            :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{
+                                            :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']"
+                                            @click="item.action && item.action()">{{
                                                 item.name }}</a>
+
                                         </MenuItem>
                                     </MenuItems>
                                 </transition>
@@ -152,7 +157,21 @@
   
 <script setup>
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore()
+async function onLoginClick() {
+    await userStore.signOut();
 
+}
+async function handleMenuItemClick() {
+    if (item.name === 'Sign out') {
+        try {
+            await userStore.signOut();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
 const user = {
     name: 'Tom Cook',
     email: 'tom@example.com',
@@ -161,8 +180,12 @@ const user = {
 }
 
 const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: '#' },
+    { name: 'Your Profile', href: 'user/profile' },
+    { name: 'Settings', href: 'user/settings' },
+    { name: 'Sign out', href: '#', action: () => onLoginClick() },
+]
+const Navigation = [
+    { name: 'Sign In', href: '/login' },
+    { name: 'Sign Up', href: '/register' },
 ]
 </script>

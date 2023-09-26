@@ -1,7 +1,9 @@
-<script  setup lang="ts">
+<script setup lang="ts">
 import { useUserStore } from '@/stores/user'
 const userStore = useUserStore()
-
+definePageMeta({
+    middleware: 'auth',
+});
 </script>
 <template>
     <div class="flex flex-col justify-center items-center h-[100vh]">
@@ -12,8 +14,8 @@ const userStore = useUserStore()
                 <p class="mt-2 px-2 text-base text-gray-600">
                     Profile
                 </p>
-                {{ userStore }}
-                <pre>{{ userStore.user }}</pre>
+
+                <pre> user: {{ JSON.stringify(userStore.user, null, 2) }}</pre>
 
             </div>
 
