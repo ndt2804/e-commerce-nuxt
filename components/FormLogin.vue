@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({
-    middleware: 'auth',
-});
+
 import { useUserStore } from '@/stores/user'
 
 const emit = defineEmits(["success"]);
