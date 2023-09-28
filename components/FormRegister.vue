@@ -4,7 +4,7 @@ const emit = defineEmits(["success"]);
 const userStore = useUserStore();
 const form = reactive({
     data: {
-        username: '',
+        name: '',
         email: '',
         password: '',
         confirmPassword: '',
@@ -18,7 +18,7 @@ async function onLoginClick() {
         form.error = "";
         form.pending = true;
         await userStore.register(
-            form.data.username,
+            form.data.name,
             form.data.email,
             form.data.password,
             form.data.confirmPassword,
@@ -48,7 +48,7 @@ async function onLoginClick() {
             <div class="relative mb-4">
                 <label for="full-name"
                     class="text-sm leading-7 text-gray-600 bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium absolute">Username</label>
-                <input v-model="form.data.username" type="username" id="username" name="username"
+                <input v-model="form.data.name" type="username" id="username" name="username"
                     class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8  outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
                     required />
             </div>
