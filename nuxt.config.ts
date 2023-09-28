@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-icon',
     '@pinia/nuxt',
-
+    'nuxt-swiper',
   ],
   pinia: {
     autoImports: [
@@ -14,4 +14,8 @@ export default defineNuxtConfig({
       ['defineStore', 'definePiniaStore'],
     ],
   },
+  swiper: {
+    prefix: 'Swiper',
+    modules: ['navigation', 'pagination'],
+  }
 })
