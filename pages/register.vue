@@ -7,8 +7,6 @@ definePageMeta({
     layout: "custom",
 });
 
-const isAdmin = useAdmin();
-
 async function onRegisterSuccess() {
     await navigateTo({ name: "login" });
 }

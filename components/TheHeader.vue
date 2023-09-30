@@ -149,6 +149,27 @@
                         seller</span>
                 </div>
             </div>
+            <div class="container mx-auto">
+                <div class="flex gap-x-8  items-center justify-center py-2">
+                    <span
+                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Trang
+                        Chủ</span>
+                    <span
+                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Sản
+                        phẩm</span>
+                    <span
+                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Tin
+                        Tức</span>
+                    <span
+                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Về
+                        chúng
+                        tôi</span>
+                    <span
+                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Liên
+                        Hệ</span>
+                </div>
+            </div>
+
         </div>
 
 
