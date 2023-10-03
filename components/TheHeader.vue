@@ -2,7 +2,7 @@
     <div class="border min-h-full">
         <!-- component -->
         <div class="bg-white">
-            <div class="  container mx-auto py-3 px-6">
+            <div class="  container mx-auto py-3 px-6 border">
                 <div class="flex justify-between">
                     <div class="flex items-center ">
                         <TheLogo />
@@ -149,24 +149,24 @@
                         seller</span>
                 </div>
             </div>
-            <div class="container mx-auto">
+            <div class="container mx-auto border  bg-teal-600">
                 <div class="flex gap-x-8  items-center justify-center py-2">
-                    <span
-                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Trang
-                        Chủ</span>
-                    <span
-                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Sản
-                        phẩm</span>
-                    <span
-                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Tin
-                        Tức</span>
-                    <span
-                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Về
-                        chúng
-                        tôi</span>
-                    <span
-                        class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Liên
-                        Hệ</span>
+                    <nuxt-link to="/"><span
+                            class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Trang
+                            Chủ</span> </nuxt-link>
+                    <nuxt-link to="/products"><span
+                            class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Sản
+                            phẩm</span></nuxt-link>
+                    <nuxt-link to="/blogs"><span
+                            class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Tin
+                            Tức</span></nuxt-link>
+                    <nuxt-link to="/about"><span
+                            class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Về
+                            chúng
+                            tôi</span></nuxt-link>
+                    <nuxt-link to="/contact"><span
+                            class="text-xl text-gray-700 decoration-primary-400 font-condensed font-black decoration-[.2rem] cursor-pointer rounded-sm py-1 px-2   hover:bg-gray-100">Liên
+                            Hệ</span></nuxt-link>
                 </div>
             </div>
 

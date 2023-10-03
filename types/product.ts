@@ -1,4 +1,5 @@
 import { Category } from './category';
+import { Publisher } from './publisher';
 export interface Product {
     _id: string
     name: string;
@@ -8,6 +9,7 @@ export interface Product {
     cover: string;
     created_at: Date;
     category: Category;
+    publisher: Publisher;
     variants: {
         type: string;
         price: number;
