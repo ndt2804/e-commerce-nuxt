@@ -1,6 +1,6 @@
 <script setup >
-const productss = ref([]);
-const { data: products } = await useAsyncData(async () => {
+const products = ref([]);
+const { data: product } = await useAsyncData(async () => {
     try {
         const response = await $fetch("http://localhost:8090/api/v1/product");
         return response;
@@ -8,6 +8,7 @@ const { data: products } = await useAsyncData(async () => {
         throw error;
     }
 });
+products.value = product.value;
 
 </script>
 <template>
@@ -15,9 +16,10 @@ const { data: products } = await useAsyncData(async () => {
         <div class="container mx-auto 2xl:pb-12">
             <img class="w-full " src="~/assets/img/manga-fes.png" />
         </div>
-        <div class="container flex flex-wrap justify-items items-center justify-between space-y-1 mx-auto">
-            <div class="flex flex-col gap-6 md:flex-row-reverse">
-                <div class="">
+        <div class="container flex justify-items items-center justify-between space-y-1 mx-auto">
+            <div class="flex flex-1 gap-6 md:flex-row-reverse">
+
+                <div class="w-full ">
                     <div
                         class="flex items-center flex-1 snap-x snap-mandatory gap-6 overflow-x-scroll  sm:overflow-x-hidden sm:px-6 pb-5 font-lexend text-2xl font-bold  underline  decoration-[.2rem] underline-offset-[.2rem]">
                         <label for="voice-search" class="sr-only">Search</label>
@@ -45,23 +47,21 @@ const { data: products } = await useAsyncData(async () => {
                                             class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
                                     </div>
                                     <div
-                                        class="hover:text-gray-700 text-gray-500 mt-4 flex justify-between decoration-primary-400 font-condensed font-black ">
-                                        <div>
-                                            <h3
-                                                class="text-sm w-[200px]  whitespace-nowrap overflow-hidden overflow-ellipsis  ">
-                                                <a :href="'/products/' + product.slug">
-                                                    <span aria-hidden="true" class="absolute inset-0 " />
-                                                    {{ product.name }}
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <p class="text-sm   ">{{
+                                        class="hover:text-gray-700 text-gray-500 mt-4  justify-between decoration-primary-400 font-condensed font-black ">
+                                        <h3
+                                            class="text-sm w-[270px]  whitespace-nowrap overflow-hidden overflow-ellipsis  ">
+                                            <a :href="'/products/' + product.slug">
+                                                <span aria-hidden="true" class="absolute inset-0 " />
+                                                {{ product.name }}
+                                            </a>
+                                        </h3>
+                                        <p class="text-sm  mt-2">Tập 1</p>
+                                        <p class="text-sm  mt-2">{{
                                             product.price }}&nbsp;₫</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <div class=" flex justify-center items-center mx-auto pb-5 py-5  ">
@@ -100,6 +100,7 @@ const { data: products } = await useAsyncData(async () => {
                         </form>
                     </div>
                 </div>
+
             </div>
 
         </div>

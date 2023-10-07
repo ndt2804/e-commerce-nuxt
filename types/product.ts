@@ -9,6 +9,7 @@ export interface Product {
     cover: string;
     created_at: Date;
     category: Category;
+    slug: string;
     publisher: Publisher;
     variants: {
         type: string;

@@ -10,25 +10,32 @@ defineProps<{
 <template>
     <swiper ref="swiperEl" :slides-per-view="5" :spaceBetween="30" :pagination="{
         clickable: true,
-    }" class="rounded-lg" @slide-change="(swiper) => (index = swiper.activeIndex)">
-        <swiper-slide v-for="product in data" class="relative overflow-hidden rounded-lg h-fit bg-gray-200  ">
+    }" class="" @slide-change="(swiper) => (index = swiper.activeIndex)">
+        <swiper-slide v-for="product in data" class="group relative overflow-hidden  ">
             <div
-                class="relative overflow-hidden rounded-md h-fit shadow-md  hover:shadow-lg transition-shadow duration-150 ease-linear aspect-h-1 aspect-w-1 w-full  xl:aspect-h-8 xl:aspect-w-7">
-                <a :key="product._id" class="group">
-                    <div
-                        class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
-                        <img :src="product.cover" :alt="product.cover"
-                            class="h-full w-full object-cover object-center group-hover:opacity-75 aspect-[2/3] " />
-                    </div>
-                    <h3
-                        class="mt-4 text-sm text-gray-700 group-hover:decoration-primary-400 group-hover:font-condensed group-hover:font-black group-hover:decoration-[.2rem] ">
-                        {{ product.name }}</h3>
-                    <div class="mt-1 text-lg"><span class="block text-gray-900 font-medium  dark:text-gray-400">{{
-                        product.price
-                    }}&nbsp;₫</span>
-                    </div>
-                </a>
+                class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                <img :src="product.cover" :alt="product.cover"
+                    class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
             </div>
+            <div
+                class="hover:text-gray-700 text-gray-500 mt-4  justify-between decoration-primary-400 font-condensed font-black">
+                <div class="">
+                    <h3 class="text-sm w-[215px]  whitespace-nowrap overflow-hidden overflow-ellipsis">
+                        <a :href="'/products/' + product.slug">
+                            <span aria-hidden="true" class="absolute inset-0 " />
+                            {{ product.name }}
+                        </a>
+                    </h3>
+
+                    <!-- <p class="text-sm   ">{{
+                newProduct.price }}&nbsp;₫</p> -->
+                </div>
+                <div class="mt-2">
+                    <p class="text-sm">{{
+                        product.price }}&nbsp;₫</p>
+                </div>
+            </div>
+
         </swiper-slide>
     </swiper>
 </template>

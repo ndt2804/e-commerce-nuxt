@@ -11,14 +11,15 @@
             <TheProductNewUpdate />
         </div>
 
-        <div class="bg-white mt-12 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="bg-white mt-6 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
             <TheSwiper :data="products" />
         </div>
-        <div class="bg-white mt-12 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+
+        <div class="bg-white mt-6 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
             <img class="w-full mb-8" src="https://cdn0.fahasa.com/media/wysiwyg/Thang-08-2023/Manga_LDP_Tagname_05.jpg" />
             <TheSwiper :data="mangaProducts" />
         </div>
-        <div class="bg-white mt-12 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div class="bg-white mt-6 mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
             <img class="w-full mb-8" src="https://cdn0.fahasa.com/media/wysiwyg/Thang-08-2023/Manga_LDP_Tagname_06.jpg
             " />
             <TheSwiper :data="lightNovelProducts" />
